@@ -1,0 +1,121 @@
+@use "modules/variables" as *;
+@use "modules/mixins" as *;
+
+#basic-search-section,
+#advanced-search-section {
+  // display: none;
+  padding: 20px;
+  background: $white;
+  height: fit-content;
+  border-radius: 6px;
+  margin: $global-pad;
+  opacity: 0;
+  animation: smoothDisplaySearch 0.6s  ease-in-out forwards;
+
+  
+  @include dark-mode {
+    background-color: $dark-card;
+    color: $dark-text;
+    border: 1px solid $dark-border;
+  }
+}
+
+.search-bar {
+  width: 25vw;
+  margin: 0 clamp(10px, 5vw, 50px) 0 50px;
+  border-radius: 20px;
+
+  form {
+    position: relative;
+    padding: 15px 15px 0;
+  }
+
+  input,
+  select {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: transparent !important;
+    padding: 10px;
+    width: 100%;
+    font-size: $input-font-size;
+    outline: none;
+    transition: all 0.2s ease;
+
+    &:focus {
+      border-color: $primary-blue;
+    }
+
+    @include dark-mode {
+      background-color: $dark-bg;
+      border-color: $dark-border;
+      color: $dark-text;
+    }
+  }
+
+  #basic-name {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border-radius: 4px;
+
+  }
+
+  #advanced-form {
+    input,
+    select {
+      margin: 10px 0 15px;
+      height: 40px;
+    }
+  }
+
+  #search-icon {
+    position: absolute;
+    left: 24px;
+    top: 71px;
+    transform: translateY(-180%);
+    color: #999;
+    pointer-events: none;
+    fill: transparent;
+
+    rect {
+      fill: transparent;
+    }
+  }
+
+  .search-btn {
+    height: 38px;
+    font-size: 0.9rem;
+    border: none;
+    width: 100%;
+    @include search-home-btn;
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
+}
+
+.building-room,
+.phone-sk {
+  display: flex;
+  flex-direction: row;
+}
+
+.phone-gp {
+  margin-right: 4px;
+}
+
+.building-gp {
+  width: 95%;
+  margin-right: 4px;
+}
+
+@keyframes smoothDisplaySearch{
+  10%{
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+}

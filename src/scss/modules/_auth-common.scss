@@ -1,0 +1,100 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "common" as *;
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+html {
+}
+
+.left-panel {
+  flex: 1;
+  @include flex-center;
+  padding: 0 20px;
+  background-color: $white;
+}
+
+h1 {
+  color: $text-dark;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: $text-muted;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+%labels-aligned {
+  display: block;
+  margin-bottom: 8px;
+  color: $text-medium;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+label {
+  @extend %labels-aligned;
+}
+
+// input[type="email"],
+// input[type="password"],
+// input[type="text"] {
+.sign-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  background-color: $input-bg;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-blue;
+    background-color: $white;
+  }
+}
+
+.extra-links {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: $text-muted;
+
+  a {
+    color: $primary-hover;
+    text-decoration: none;
+  }
+}
+
+.right-panel {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/src/assets/leverx.jpg");
+}
+
+#x {
+  color: $primary-blue;
+}
+
+#message {
+  color: red;
+  min-height: 20px;
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  @include wrapper-common;
+}

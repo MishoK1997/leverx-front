@@ -1,0 +1,16 @@
+@use "modules/variables" as *;
+@use "modules/auth-common";
+@use "modules/mixins" as *;
+
+.wrapper {
+  max-width: 580px;
+}
+
+.btn-signup {
+  @include btn-primary;
+}
+
+.input-group-container {
+  display: flex;
+  justify-content: space-between;
+}

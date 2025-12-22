@@ -1,0 +1,38 @@
+{
+  // "compilerOptions": {
+  //   "target": "es2017",
+  //   "module": "ESNext",
+  //   // "moduleResolution": "bundler",
+  //   "outDir": "./dist",
+  //   "rootDir": "./src",
+  //   "strict": true
+
+  //   // "allowImportingTsExtensions": true,
+  //   // "noEmit": true
+  // },
+
+  //     "compilerOptions": {
+  //       "target": "ESNext",
+  //       "lib": ["DOM", "DOM.Iterable", "ESNext"],
+  //       "module": "ESNext",
+  //       "moduleResolution": "bundler",
+  //       "jsx": "react-jsx", // Critical for React
+  //       "strict": true,
+  //       "noEmit": true
+  //     },
+  //   "include": ["src/**/*"],
+  //   "exclude": ["node_modules"]
+  // }
+
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["DOM", "ES6"],
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true
+  },
+  "include": ["src", "trash/dateUtils.ts"]
+}

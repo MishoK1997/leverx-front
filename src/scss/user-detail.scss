@@ -1,0 +1,296 @@
+@use "./modules/variables" as *;
+@use "./modules/mixins" as *;
+
+#user-detail-container {
+  padding: 10px 5%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  // Display profile container smoothly 
+  animation: smoothReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+
+  #user-profile-detail {
+    background-color: $white;
+    border-radius: 4px;
+    @include flex($dir: column, $align: center);
+    width: 30%;
+    min-height: 600px !important;
+
+    @include dark-mode {
+      background-color: $dark-card;
+      border: 1px solid $dark-border;
+    }
+
+    padding: 10px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      max-width: 250px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 0 12px 0;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+
+      @include dark-mode {
+
+        color: $dark-text;
+      }
+    }
+
+    p {
+      color: $text-muted;
+      font-weight: 600;
+      opacity: 0.8;
+      @include flex-center;
+    }
+
+    .name-wrapper{
+      margin-bottom: 50px;
+
+      min-height: 90px;
+    }
+
+    #copy-btn {
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 30px;
+      padding: 10px;
+      font-weight: $secondary-font-weight;
+      color: $text-muted;
+      cursor: pointer;
+      @include flex-center;
+      padding-right: 20px;
+      @include hover-lift-second($lift-amount: -1px);
+      @include dark-mode {
+        background-color: $dark-card;
+        color: $dark-text;
+        border: 1px solid $dark-border;
+
+        &:hover {
+          color: $primary-hover;
+        }
+      }
+
+    }
+
+    #back-btn {
+      width: fit-content;
+      background-color: rgba(0, 0, 0, 0.082);
+      position: relative;
+      top: 1%;
+      left: -44%;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+
+      @include hover-lift-second($lift-amount: 1px);
+
+      @include dark-mode {
+        border: 1px solid $dark-border;
+       
+      }
+    }
+  }
+
+  #user-details {
+    background-color: $white;
+    border-radius: 4px;
+    width: 100%;
+    @include flex($dir: column, $align: flex-start);
+    margin-left: 2px;
+    padding: 2%;
+
+    // Smoothly appear the  container of user details
+    animation: smoothReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+     
+
+    @include dark-mode {
+      background-color: $dark-card;
+      border: 1px solid $dark-border;
+    }
+
+    h2 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      color: #777;
+
+
+      
+    }
+
+    hr {
+      margin-bottom: 10px;
+      height: 1px;
+      width: 90%;
+      background-color: #777777;
+      opacity: 0.4;
+
+
+    }
+
+    .user-meta {
+      width: 90%;
+
+      li {
+        list-style-type: none;
+        min-height: 34px;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+
+
+      }
+
+      li:first-child {
+        margin-top: 6px;
+      }
+
+      li span:first-child {
+        color: #777;
+        min-width: 60%;
+        word-break: break-all;   
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--primary-blue);
+
+        word-break: break-all;   
+      }
+
+    
+    }
+  }
+
+
+}
+
+#back-btn svg {
+  position: relative;
+  top: 1px;
+  right: 1px;
+
+}
+
+#copy-btn svg,
+#edit-btn svg {
+  margin: 0 7px;
+
+  
+}
+
+#edit-btn{
+
+  @include dark-mode {
+    &:hover{
+      color: $primary-hover;
+     }  
+  }
+}
+
+// This one used for smooth render of containers
+
+@keyframes smoothReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.60); 
+
+ 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  
+  }
+}
+
+
+
+// Responsive section
+
+@media (max-width: 830px){
+  #user-detail-container{
+    flex-direction: column;
+    gap: 5px;
+
+  }
+  #user-profile-detail{
+    width: 100% !important;
+
+    #back-btn{
+     right: -10px !important;
+    }
+    #u-avatar{
+      
+      left: 2px !important;
+    } 
+  }
+
+  #user-details{
+    padding: 0 20px !important;
+
+    hr{
+      width: 100% !important;
+    }
+
+    .user-meta {
+ 
+
+      width: 100% !important;
+    
+      .edit-user-class{
+        min-width: 100px !important;
+      }
+      li{
+        min-height: 37px !important;
+
+
+      }
+    }
+  }
+  
+}
+
+
+// loader
+
+#progress-detail{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+
+  opacity: 0.8;
+
+
+}
+
+
+@keyframes shakeX {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-2px, 0) rotate(-5deg); }
+  50% { transform: translate(0, 0) rotate(0deg); }
+  75% { transform: translate(2px, 0) rotate(5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+#x {
+  display: inline-block; 
+  animation: shakeX 0.4s infinite ease-in-out; 
+  font-weight:  bold;
+
+
+}

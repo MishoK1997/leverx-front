@@ -1,0 +1,590 @@
+{
+  "users": [
+    {
+      "_id": "1",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/1-user.jpg",
+      "first_name": "Marya",
+      "last_name": "Kizim",
+      "first_native_name": "Marya",
+      "last_native_name": "Kizim",
+      "middle_native_name": "Ma.",
+      "department": "Web & Mobile",
+      "building": "Pilsudskiego 69 (Poland)",
+      "room": "404",
+      "date_birth": {
+        "day": 24,
+        "month": 2,
+        "year": 2022
+      },
+      "desk_number": "2233",
+      "manager": {
+        "id": "987ff8cb-b506-4d5e-9166-ab8c644bb891",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+12931293129",
+      "email": "m.kizim@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "Georgia",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "hr",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "2",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/2-user.jpg",
+      "first_name": "Ivan",
+      "last_name": "Chaliadzinski",
+      "first_native_name": "Ivan",
+      "last_native_name": "Chaliadzinski",
+      "middle_native_name": "Iv.",
+      "department": "Web & Mobile",
+      "building": "Pilsudskiego 69 (Poland)",
+      "room": "1404",
+      "date_birth": {
+        "day": 15,
+        "month": 12,
+        "year": 2025
+      },
+      "desk_number": "333",
+      "manager": {
+        "id": "1",
+        "first_name": "Marya",
+        "last_name": "Kizim"
+      },
+      "phone": "+12931293129",
+      "email": "ivan@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "Georgia",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "employee",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "3",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/user-avatar.jpg",
+      "first_name": "Michael",
+      "last_name": "Khojadze",
+      "first_native_name": "Mikheili",
+      "last_native_name": "Khojadze",
+      "middle_native_name": "Mk.",
+      "department": "Web & Mobile",
+      "building": "Pilsudskiego 69 (Poland)",
+      "room": "1404",
+      "date_birth": {
+        "year": 1901,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": "33444444",
+      "manager": {
+        "id": "1",
+        "first_name": "Marya",
+        "last_name": "Kizim"
+      },
+      "phone": "597100451",
+      "email": "m.khojadze@leverx.com",
+      "skype": "misho_k",
+      "cnumber": "C5336116",
+      "citizenship": "Georgia",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "admin",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "4",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/4-user.jpg",
+      "first_name": "Nikita",
+      "last_name": "Filimonau",
+      "first_native_name": "Nikita",
+      "last_native_name": "Filimonau",
+      "middle_native_name": "Ni.",
+      "department": "Web & Mobile",
+      "building": "Pilsudskiego 69 (Poland)",
+      "room": "1404",
+      "date_birth": {
+        "year": 1901,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": 22,
+      "manager": {
+        "id": "1",
+        "first_name": "Marya",
+        "last_name": "Kizim"
+      },
+      "phone": "+12931293129",
+      "email": "nikita@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "Georgia",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "employee",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "5",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/5-user.jpg",
+      "first_name": "Ihar",
+      "last_name": "Sivak",
+      "first_native_name": "Ihar",
+      "last_native_name": "Sivak",
+      "middle_native_name": "Ih.",
+      "department": "Web & Mobile",
+      "building": "Pilsudskiego 69 (Poland)",
+      "room": "1404",
+      "date_birth": {
+        "year": 1901,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": 22,
+      "manager": {
+        "id": "987ff8cb-b506-4d5e-9166-ab8c644bb891",
+        "first_name": "John",
+        "last_name": "Snow"
+      },
+      "phone": "+12931293129",
+      "email": "sivak@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "Georgia",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "hr",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "6",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/6-user.jpg",
+      "first_name": "User-6",
+      "last_name": "Someone",
+      "first_native_name": "User-6",
+      "last_native_name": "Someone",
+      "middle_native_name": "US6.",
+      "department": "Web & Mobile",
+      "building": "Pilsudskiego 69 (Poland)",
+      "room": "1404",
+      "date_birth": {
+        "year": 1901,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": 22,
+      "manager": {
+        "id": "5",
+        "first_name": "Ihar",
+        "last_name": "Sivak"
+      },
+      "phone": "+12931293129",
+      "email": "user-6@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "Georgia",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "employee",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "7",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/7-user.jpg",
+      "first_name": "User-7",
+      "last_name": "Someone",
+      "first_native_name": "User-7",
+      "last_native_name": "Someone",
+      "middle_native_name": "US7.",
+      "department": "Web & Mobile",
+      "building": "Pilsudskiego 69 (Poland)",
+      "room": "1404",
+      "date_birth": {
+        "year": 1901,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": 22,
+      "manager": {
+        "id": "5",
+        "first_name": "Ihar",
+        "last_name": "Sivak"
+      },
+      "phone": "+12931293129",
+      "email": "user-7@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "Georgia",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "employee",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "8",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/8-user.jpg",
+      "first_name": "Anton",
+      "last_name": "Sviarzhynski",
+      "first_native_name": "Anton",
+      "last_native_name": "Sviarzhynski",
+      "middle_native_name": "At.",
+      "department": "Web & Mobile",
+      "building": "Pilsudskiego 69 (Poland)",
+      "room": "1404",
+      "date_birth": {
+        "year": 1901,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": "25",
+      "manager": {
+        "id": "5",
+        "first_name": "Ihar",
+        "last_name": "Sivak"
+      },
+      "phone": "+12931293129",
+      "email": "a.sv@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "Georgia",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "employee",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "9",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/3-user.jpg",
+      "first_name": "Dzmitry",
+      "last_name": "Fesik",
+      "first_native_name": "Dzmitry",
+      "last_native_name": "Fesik",
+      "middle_native_name": "Dz.",
+      "department": "Web & Mobile",
+      "building": "Pilsudskiego 69 (Poland)",
+      "room": "1404",
+      "date_birth": {
+        "year": 1901,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": 22,
+      "manager": {
+        "id": "5",
+        "first_name": "Ihar",
+        "last_name": "Sivak"
+      },
+      "phone": "+12931293129",
+      "email": "d.fesik@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "Georgia",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "employee",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "10",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/musk.jpg",
+      "first_name": "Elon",
+      "last_name": "Musk",
+      "first_native_name": "Elon",
+      "last_native_name": "Musk",
+      "middle_native_name": "TS.",
+      "department": "DOG",
+      "building": "Silicon Value 69 (Poland)",
+      "room": "1404",
+      "date_birth": {
+        "year": 1901,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": 22,
+      "manager": {
+        "id": "",
+        "first_name": "Donald",
+        "last_name": "Trump"
+      },
+      "phone": "+12931293129",
+      "email": "e.musk@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "USA",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "hr",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "11",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/vitalik.jpg",
+      "first_name": "Vitalic",
+      "last_name": "Butterin",
+      "first_native_name": "Vitalik",
+      "last_native_name": "Butterin",
+      "middle_native_name": "TS.",
+      "department": "ETH",
+      "building": "Silicon Value 69 (Poland)",
+      "room": "1404",
+      "date_birth": {
+        "year": "1901",
+        "month": "01",
+        "day": "14"
+      },
+      "desk_number": 22,
+      "manager": {
+        "id": "10",
+        "first_name": "Elon",
+        "last_name": "Musk"
+      },
+      "phone": "+12931293129",
+      "email": "vita@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "USA",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "employee",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG",
+      "key": "2025-12-30"
+    },
+    {
+      "_id": "12",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/satoshi.jpg",
+      "first_name": "Satoshi",
+      "last_name": "Nakamoto",
+      "first_native_name": "Satoshi",
+      "last_native_name": "Nakamoto",
+      "middle_native_name": "TS.",
+      "department": "Bitcoin",
+      "building": "Silicon Value ",
+      "room": "1404",
+      "date_birth": {
+        "year": 1901,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": 22,
+      "manager": {
+        "id": "10",
+        "first_name": "Elon",
+        "last_name": "Musk"
+      },
+      "phone": "+12931293129",
+      "email": "nakamoto@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "Japan",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "employee",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "13",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/bill.jpg",
+      "first_name": "Bill",
+      "last_name": "Gates",
+      "first_native_name": "Bill",
+      "last_native_name": "Gates",
+      "middle_native_name": "WN.",
+      "department": "Windows",
+      "building": "Silicon Value ",
+      "room": "1404",
+      "date_birth": {
+        "year": 1901,
+        "month": 1,
+        "day": 1
+      },
+      "desk_number": 22,
+      "manager": {
+        "id": "10",
+        "first_name": "Elon",
+        "last_name": "Musk"
+      },
+      "phone": "+12931293129",
+      "email": "bill@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "Japan",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "employee",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "14",
+      "isRemoteWork": true,
+      "user_avatar": "/pics/linus.jpg",
+      "first_name": "Linus",
+      "last_name": "Torvalds",
+      "first_native_name": "Linus",
+      "last_native_name": "Torvalds",
+      "middle_native_name": "WN.",
+      "department": "Linux",
+      "building": "Silicon Value ",
+      "room": "1404",
+      "date_birth": {
+        "year": "2025",
+        "month": "12",
+        "day": "22"
+      },
+      "desk_number": 22,
+      "manager": {
+        "id": "10",
+        "first_name": "Elon",
+        "last_name": "Musk"
+      },
+      "phone": "+12931293129",
+      "email": "linu@leverx.com",
+      "skype": "live:.cid.21asd41jd1m132",
+      "cnumber": "C5336116",
+      "citizenship": "USA",
+      "visa": [
+        {
+          "issuing_country": "Poland",
+          "type": "National visa type D",
+          "start_date": 1652158800000,
+          "end_date": 1683608400000
+        }
+      ],
+      "role": "employee",
+      "password": "$2a$12$MnWzuzxnK2corvwKSTzWaeI3B8Reu5atulLgs8N90Qj.Pitzy16DG"
+    },
+    {
+      "_id": "15",
+      "isRemoteWork": null,
+      "user_avatar": "/pics/leverx.jpg",
+      "first_name": "Sam",
+      "last_name": "Altman",
+      "first_native_name": "N/A",
+      "last_native_name": "N/A",
+      "middle_native_name": "N/A",
+      "department": "N/A",
+      "building": "N/A",
+      "room": "N/A",
+      "date_birth": {
+        "year": "1",
+        "month": "1",
+        "day": "1234"
+      },
+      "desk_number": "N/A",
+      "manager": {
+        "id": "1",
+        "first_name": "Marya",
+        "last_name": "Kizim"
+      },
+      "phone": "N/A",
+      "email": "sam@leverx.com",
+      "skype": "N/A",
+      "cnumber": "N/A",
+      "citizenship": "N/A",
+      "visa": [
+        {
+          "issuing_country": "N/A",
+          "type": "N/A",
+          "start_date": "N/A",
+          "end_date": "N/A"
+        }
+      ],
+      "role": "employee",
+      "password": "$2b$10$PZwc4jyQZI1tByuq7Mt/QuC3whfH0PBiuUrHIlD6Bjc4/89tJ2g9q"
+    }
+  ]
+}

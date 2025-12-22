@@ -1,0 +1,17 @@
+@use "modules/variables" as *;
+@use "modules/auth-common";
+@use "modules/mixins" as *;
+
+#remember-me {
+  @extend %labels-aligned;
+}
+
+.btn-signin {
+  @include btn-primary;
+}
+
+.remember-div {
+  display: flex;
+  color: $text-muted;
+  gap: 5px;
+}

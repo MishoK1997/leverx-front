@@ -1,0 +1,145 @@
+@use "modules/variables" as *;
+@use "modules/mixins" as *;
+@use "modules/common" as *;
+
+/*
+This section is intended to Header-------------------------
+*/
+header {
+  background-color: $header-bg;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: $global-pad;
+  color: $white;
+  box-shadow: inset 0 -4px 4px rgba(0, 0, 0, 0.17);
+  font-weight: bold;
+  position: fixed;
+  z-index: 40000;
+  top: 0;
+
+  .header-left {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+    .company-name {
+      font-size: 0.7rem;
+      opacity: 0.7;
+    }
+    .app-name {
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      color: $white;
+    }
+  }
+
+  .header-nav {
+    @include flex-center;
+    gap: 2em;
+    @include mobile;
+
+    .nav-item {
+      @include flex-center;
+      padding: 0 0.6rem;
+      position: relative;
+      height: 100%;
+      cursor: pointer;
+      text-wrap: nowrap;
+      color: $white;
+      text-decoration: unset;
+
+                  
+      &::after {
+        content: '';
+        width: 0%; 
+        height: 0; 
+        transition: width 0.3s ease-out; 
+      }
+
+      &.active::after {
+        // content: "";
+        position: absolute;
+        bottom: 0;
+        // left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: $primary-light;
+        // border-radius: 4px 4px 0 0;
+
+        border-radius: 100% 100% 20% 20%;
+
+        box-shadow: 0 -2px 5px 2px $primary-blue;
+
+
+      }
+    }
+  }
+
+  .header-right {
+    @include flex-center;
+    gap: 12px;
+    span {
+      font-weight: 700;
+    }
+    button:first-child {
+      padding: 12px;
+    }
+    button:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    margin-left: 25px;
+
+    .pill-btn {
+      background-color: rgba(0, 0, 0, 0.2);
+      border: none;
+      border-radius: 50px;
+
+      @include flex-center;
+      gap: 8px;
+      color: $white;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      height: 36px;
+      img {
+        width: 15px;
+        height: 15px;
+      }
+
+      @include mobile;
+    }
+
+    .user-profile {
+      padding-right: 1.8rem;
+      img {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    .logout-btn {
+      background-color: rgba(0, 0, 0, 0.2);
+      border: none;
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: 50%;
+      @include flex-center;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin-left: 30px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      @include mobile;
+    }
+  }
+}

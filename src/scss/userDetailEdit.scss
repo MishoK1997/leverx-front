@@ -1,0 +1,78 @@
+@use "modules/variables" as *;
+@use "modules/mixins" as *;
+
+.edit-user-class {
+  width: 100%;
+  // padding: 6px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  outline: unset;
+  max-width: 200px;
+
+  animation: smoothReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  padding: 7px 12px; 
+
+
+  @include dark-mode {
+    background-color: $dark-card;
+    border: 1px solid $dark-border;
+    color: $white;
+  }
+  &:focus {
+    border-color: $primary-blue;
+  }
+
+}
+
+.edit-name-group input {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#edit-btn {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  border: $edit-btn-border;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-right: 20px;
+
+  animation: smoothReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+
+}
+
+#edit-btn-wrapper {
+  display: flex;
+  gap: 10px;
+
+}
+
+.user-btn-class {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  border: $edit-btn-border;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  
+
+  @include dark-mode {
+    color: $dark-text-color;
+    &:hover{
+      color: $primary-hover;
+    }
+  }
+}
+.is-editing-btn {
+  padding: 10px !important;
+    transition: all 0.4s;
+
+}
+

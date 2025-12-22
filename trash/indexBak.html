@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeverX Employee Services</title>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <!-- Radio inputs controlling search tabs (basic/advanced) -->
+    <input
+      class="visually-hidden"
+      type="radio"
+      name="search-tab"
+      id="tab-basic"
+      checked
+    />
+    <input
+      type="radio"
+      name="search-tab"
+      id="tab-advanced"
+      class="visually-hidden"
+    />
+
+    <!-- Sidebar section: search tabs + view switching controls -->
+    <aside class="search-section">
+      <nav class="tabs-nav">
+        <ul class="tabs">
+          <li>
+            <label for="tab-basic" class="tab-label" tabindex="0"
+              >BASIC SEARCH</label
+            >
+          </li>
+
+          <li>
+            <label for="tab-advanced" class="tab-label" tabindex="0"
+              >ADVANCED SEARCH</label
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Employee count + toggle buttons for grid/list view -->
+      <div class="aside-right">
+        <span class="employee-count"></span>
+
+        <div class="view-controls">
+          <button id="view-grid" class="view-switch-btn">
+            <svg
+              class="svg-icon"
+              style="
+                width: 20px;
+                height: 20px;
+                fill: currentColor;
+                overflow: hidden;
+              "
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M928 1024h-288a96 96 0 0 1-96-96v-288a96 96 0 0 1 96-96h288a96 96 0 0 1 96 96v288a96 96 0 0 1-96 96z m32-384a32 32 0 0 0-32-32h-288a32 32 0 0 0-32 32v288a32 32 0 0 0 32 32h288a32 32 0 0 0 32-32v-288z m-32-160h-288a96 96 0 0 1-96-96V96a96 96 0 0 1 96-96h288a96 96 0 0 1 96 96v288a96 96 0 0 1-96 96z m32-384a32 32 0 0 0-32-32h-288a32 32 0 0 0-32 32v288a32 32 0 0 0 32 32h288a32 32 0 0 0 32-32V96zM384 1024H96a96 96 0 0 1-96-96v-288a96 96 0 0 1 96-96h288a96 96 0 0 1 96 96v288a96 96 0 0 1-96 96z m32-384a32 32 0 0 0-32-32H96a32 32 0 0 0-32 32v288a32 32 0 0 0 32 32h288a32 32 0 0 0 32-32v-288z m-32-160H96a96 96 0 0 1-96-96V96a96 96 0 0 1 96-96h288a96 96 0 0 1 96 96v288a96 96 0 0 1-96 96z m32-384a32 32 0 0 0-32-32H96a32 32 0 0 0-32 32v288a32 32 0 0 0 32 32h288a32 32 0 0 0 32-32V96z"
+              />
+            </svg>
+          </button>
+
+          <button id="view-list" class="view-switch-btn">
+            <svg
+              class="svg-icon"
+              style="
+                width: 22px;
+                height: 22px;
+                fill: currentColor;
+                overflow: hidden;
+              "
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M19 4a1 1 0 01-1 1H7a1 1 0 010-2h11a1 1 0 011 1zM4 4a1 1 0 01-1 1H2a1 1 0 010-2h1a1 1 0 011 1zm15 6a1 1 0 01-1 1H7a1 1 0 110-2h11a1 1 0 011 1zM4 10a1 1 0 01-1 1H2a1 1 0 110-2h1a1 1 0 011 1zm14 7a1 1 0 100-2H7a1 1 0 100 2h11zM3 17a1 1 0 100-2H2a1 1 0 100 2h1z"
+                ></path>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content area containing the two search forms + employee list -->
+    <div class="content-container">
+      <!-- Basic search section -->
+      <section id="basic-search-section" class="search-bar">
+        <form action="" method="get" target="">
+          <label for="basic-name"></label>
+          <svg
+            id="search-icon"
+            width="30px"
+            height="30px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <g clip-path="url(#clip0_15_152)">
+                <rect width="24" height="24" fill="white"></rect>
+                <circle
+                  cx="10.5"
+                  cy="10.5"
+                  r="6.5"
+                  stroke="#999"
+                  stroke-linejoin="round"
+                ></circle>
+                <path
+                  d="M19.6464 20.3536C19.8417 20.5488 20.1583 20.5488 20.3536 20.3536C20.5488 20.1583 20.5488 19.8417 20.3536 19.6464L19.6464 20.3536ZM20.3536 19.6464L15.3536 14.6464L14.6464 15.3536L19.6464 20.3536L20.3536 19.6464Z"
+                  fill="#999"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_15_152">
+                  <rect width="24" height="24" fill="white"></rect>
+                </clipPath>
+              </defs>
+            </g>
+          </svg>
+          <input
+            type="text"
+            id="basic-name"
+            name="name"
+            placeholder="John Smith"
+          />
+          <button type="button" id="basic-search-btn" class="search-btn">
+            SEARCH
+          </button>
+        </form>
+      </section>
+
+      <!-- Advanced search section with multiple fields -->
+      <section id="advanced-search-section" class="search-bar">
+        <form action="" method="get" target="" id="advanced-form">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="John Smith" />
+
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="john.smith@laverx.com"
+          />
+
+          <div class="phone-sk">
+            <div class="phone-gp">
+              <label for="phone">Phone</label>
+              <input
+                type="number"
+                name="phone"
+                id="phone"
+                placeholder="Phone Number"
+              />
+            </div>
+            <div>
+              <label for="skype">Skype</label>
+              <input
+                type="number"
+                name="skype"
+                id="skype"
+                placeholder="SkypeID"
+              />
+            </div>
+          </div>
+
+          <div class="building-room">
+            <div class="building-gp">
+              <label for="building">Building</label>
+              <select id="building">
+                <option value="">Any</option>
+                <option value=""></option>
+              </select>
+            </div>
+
+            <div>
+              <label for="room">Room</label>
+              <input type="number" id="room" name="room" placeholder="303.1" />
+            </div>
+          </div>
+
+          <label for="department">Department</label>
+          <select id="department">
+            <option value="">Any</option>
+            <option value=""></option>
+          </select>
+
+          <button class="search-btn" type="submit">SEARCH</button>
+        </form>
+      </section>
+
+      <!-- Employee list (grid or list depending on selected mode) -->
+      <main>
+        <!-- Header row describing list columns -->
+        <div class="list-header-row">
+          <span class="col-photo">
+            <svg
+              class="header-svg"
+              id="photo-svg"
+              fill="#2c68f6"
+              height="14px"
+              width="14px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 330 330"
+              xml:space="preserve"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  id="XMLID_520_"
+                  d="M165,0C74.019,0,0,74.019,0,165s74.019,165,165,165s165-74.019,165-165S255.982,0,165,0z M165,300 C90.561,300,30,239.44,30,165S90.561,30,165,30c74.439,0,135,60.561,135,135S239.439,300,165,300z"
+                ></path>
+              </g>
+            </svg>
+            Photo</span
+          >
+          <span class="col-name">
+            <svg
+              class="header-svg"
+              fill="#2c68f6"
+              width="15px"
+              height="15px"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              stroke="#2c68f6"
+              stroke-width="0.384"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2.5a5.5 5.5 0 00-3.096 10.047 9.005 9.005 0 00-5.9 8.18.75.75 0 001.5.045 7.5 7.5 0 0114.993 0 .75.75 0 101.499-.044 9.005 9.005 0 00-5.9-8.181A5.5 5.5 0 0012 2.5zM8 8a4 4 0 118 0 4 4 0 01-8 0z"
+                ></path>
+              </g>
+            </svg>
+            Name</span
+          >
+          <div class="list-right-header-container">
+            <span class="col-dept">
+              <svg
+                class="header-svg"
+                width="15px"
+                height="15px"
+                viewBox="0 0 24.00 24.00"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#2c68f6"
+                stroke-width="0.00024000000000000003"
+                transform="matrix(1, 0, 0, 1, 0, 0)"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke="#CCCCCC"
+                  stroke-width="0.048"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M6 5V4C6 2.34315 7.34315 1 9 1H15C16.6569 1 18 2.34315 18 4V5H20C21.6569 5 23 6.34315 23 8V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V8C1 6.34315 2.34315 5 4 5H6ZM8 4C8 3.44772 8.44772 3 9 3H15C15.5523 3 16 3.44772 16 4V5H8V4ZM19.882 7H4.11803L6.34164 11.4472C6.51103 11.786 6.8573 12 7.23607 12H11C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12H16.7639C17.1427 12 17.489 11.786 17.6584 11.4472L19.882 7ZM11 14H7.23607C6.09975 14 5.06096 13.358 4.55279 12.3416L3 9.23607V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V9.23607L19.4472 12.3416C18.939 13.358 17.9002 14 16.7639 14H13C13 14.5523 12.5523 15 12 15C11.4477 15 11 14.5523 11 14Z"
+                    fill="#2c68f6"
+                  ></path>
+                </g>
+              </svg>
+              Department</span
+            >
+            <span class="col-room">
+              <svg
+                class="header-svg"
+                fill="#2c68f6"
+                width="15px"
+                height="15px"
+                viewBox="0 0 32 32"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <title>door</title>
+                  <path
+                    d="M30 28.75h-2.779v-26.75c-0-0.69-0.56-1.25-1.25-1.25h-19.971c-0.69 0-1.25 0.56-1.25 1.25v0 26.75h-2.75c-0.69 0-1.25 0.56-1.25 1.25s0.56 1.25 1.25 1.25v0h28c0.69 0 1.25-0.56 1.25-1.25s-0.56-1.25-1.25-1.25v0zM7.25 28.75v-25.5h17.471v25.5zM21.48 14.84c-0.138-0.057-0.299-0.089-0.467-0.089-0.349 0-0.665 0.141-0.894 0.37l0-0c-0.232 0.222-0.377 0.534-0.379 0.88v0c0.004 0.174 0.041 0.338 0.103 0.489l-0.003-0.009c0.066 0.157 0.161 0.291 0.279 0.4l0.001 0.001c0.219 0.234 0.529 0.38 0.874 0.38 0.002 0 0.005 0 0.007-0h-0c0.174-0.005 0.339-0.041 0.489-0.104l-0.009 0.003c0.3-0.143 0.537-0.379 0.676-0.671l0.004-0.009c0.058-0.142 0.094-0.306 0.1-0.477l0-0.002c-0.002-0.346-0.148-0.658-0.38-0.879l-0-0c-0.109-0.119-0.241-0.214-0.391-0.278l-0.007-0.003z"
+                  ></path>
+                </g>
+              </svg>
+              Room</span
+            >
+          </div>
+        </div>
+
+        <!-- Container holding all employee cards -->
+        <div class="employee-list-container">
+          <!-- Employee card -->
+          <article class="employee-card" tabindex="0">
+            <img src="" alt="" />
+            <div class="card-info">
+              <h3></h3>
+              <hr />
+              <div class="details">
+                <span> </span>
+                <span> </span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

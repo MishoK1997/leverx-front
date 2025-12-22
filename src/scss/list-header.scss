@@ -1,0 +1,44 @@
+@use "modules/variables" as *;
+@use "modules/mixins" as *;
+
+.list-header-row {
+  display: flex;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: $white;
+  border-radius: $radius-sm;
+  color: $text-muted;
+  font-weight: $primary-font-weight;
+
+  @include dark-mode{
+    background-color: $dark-card;
+    color: $dark-text;
+    border: 1px solid $dark-border;
+  }
+
+  span {
+    @include flex(row, flex-start, center);
+  }
+
+  .col-photo {
+    margin-right: 4%;
+  }
+  .col-name {
+    width: 48.5%;
+  }
+  .col-dept {
+    width: 55%;
+  }
+
+  .header-svg {
+    margin-right: 3px;
+  }
+
+  .list-right-header-container {
+    @include flex(row, flex-start, center);
+    gap: 16px;
+    width: 60%;
+  }
+}

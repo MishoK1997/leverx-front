@@ -1,0 +1,124 @@
+@use "modules/variables" as *;
+@use "modules/mixins" as *;
+
+.sidebar {
+  @include flex-center($flex-just-cont: space-between);
+  width: 100%;
+  min-height: 83px;
+  background-color: transparent;
+  padding: $global-pad;
+  overflow: hidden;
+
+
+
+
+}
+
+.tabs-nav {
+  width: 25vw;
+  margin: 0 clamp(10px, 5vw, 50px) 0 0;
+
+  .tabs {
+    flex-direction: row;
+    display: flex;
+
+    list-style-type: none;
+    width: 100%;
+
+    li {
+      cursor: pointer;
+      // padding: 8px 12px;
+      // border-bottom: 3.5px solid transparent;
+      color: rgba(0, 0, 0, 0.55);
+      transition: all 0.3s ease;
+      text-align: center;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      // &.active {
+      //   color: $text-dark;
+      //   border-bottom-color: $primary-blue;
+      // }
+
+
+
+            
+      &::after {
+        content: '';
+        width: 0%; 
+        height: 3px; 
+        transition: width 0.3s ease-out; 
+      }
+    
+      &.active {
+        color: $text-dark;
+
+        &::after {
+          width: 100%; 
+          box-shadow: 0  9px 5px 1px $primary-blue;
+
+          border-radius: 90%;
+
+        }
+      }
+
+
+
+      .tab-label {
+        outline: none;
+        padding: 23px 0;
+        font-weight: $primary-font-weight;
+        font-size: 0.9rem;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        margin-bottom: -2px;
+        transition:
+          color 0.2s,
+          border-bottom 0.2s;
+        overflow: hidden;
+        @include dark-mode {
+          color: $text-muted;
+        }
+      }
+    }
+  }
+}
+
+
+.aside-right {
+  width: 66.5vw;
+  @include flex-center($flex-just-cont: space-between);
+  padding-left: 5px;
+  span {
+    color: $text-muted;
+    font-weight: $primary-font-weight;
+  }
+
+  .view-controls {
+    align-items: center;
+
+    button {
+      color: $text-muted;
+      border: none;
+      cursor: pointer;
+      padding: 6px 6px;
+
+
+      @include dark-mode{
+        background-color: transparent;
+        color: $dark-text;
+      }
+
+      &.active {
+        color: $primary-blue;
+      }
+      &:focus-visible {
+        outline: 2px solid $primary-blue;
+        border-radius: 4px;
+      }
+        @include dark-mode { color: $text-muted; }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@use "modules/variables" as *;
+@use "modules/mixins" as *;
+
+.employee-card {
+  @include flex(column, center, center);
+  @include hover-lift;
+
+
+  background-color: $white;
+  border-radius: $radius-sm;
+  padding-top: 40px;
+  box-shadow: $shadow-sm;
+  border: 1px solid transparent;
+
+  opacity: 0;
+  animation: smoothDisplayDelay 0.6s   forwards;
+  
+
+  img {
+    width: $card-img-size-lg;
+    height: $card-img-size-lg;
+    border-radius: $radius-circle;
+    object-fit: cover;
+  }
+
+  h3 {
+    text-align: center;
+    margin: 15px 0 20px 0;
+  }
+
+  hr {
+    border: none;
+    height: 1.5px;
+    background-color: $divider-color;
+    opacity: 0.3;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  // Shared details styling
+  .details {
+    @include flex(row, space-between, stretch);
+    gap: 15px;
+    font-size: 0.8rem;
+    width: 100%;
+    margin: 20px 0;
+    span {
+      display: flex;
+    }
+
+    svg {
+      flex-shrink: 0;
+      min-width: 15px;
+      min-height: 15px;
+      &:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  @include dark-mode{
+    background-color: $dark-card;
+    color: $dark-text;
+    border: 1px solid $dark-border;
+  }
+}
+
+.card-link-wrapper {
+  text-decoration: none;
+
+  color: inherit;
+
+
+  
+}
+
+
+@keyframes smoothDisplayDelay {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

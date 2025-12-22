@@ -1,0 +1,252 @@
+@use "modules/variables" as *;
+@use "modules/mixins" as *;
+
+.settings-container {
+  margin: 0;
+  padding: $second-pad;
+
+  // animation: smoothReveal 0.6s  ease-in-out forwards;
+
+
+  @media (max-width: 830px) {
+    padding: 15px;
+  }
+
+  .card {
+    background: $white;
+    border-radius: 8px;
+    box-shadow: $shadow-sm;
+    max-width: 1000px;
+    margin: 20px auto;
+    overflow: hidden;
+
+    animation: smoothReveal 0.6s  ease-in-out forwards;
+
+
+    @include dark-mode{
+      background-color: $dark-card;
+      border: 1px solid $dark-border;
+    }
+
+    .header-title {
+      padding: 20px 30px;
+      border-bottom: 1px solid $border-color;
+      font-weight: 700;
+      color: $text-muted;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+
+      @include dark-mode{
+        background-color: $dark-card;
+        color: $dark-text;
+        border: 1px solid $dark-border;
+      }
+      
+      @media (max-width: 830px) {
+        padding: 15px 20px;
+      }
+    }
+
+    .grid-row {
+      display: grid;
+      // Default Desktop Grid
+      grid-template-columns: 1fr 220px 120px;
+      align-items: center;
+      padding: 15px 30px;
+      gap: 20px;
+
+      @include dark-mode{
+        background-color: $dark-card;
+        color: $dark-text;
+        border: 1px solid $dark-border;
+      }
+
+      @media (max-width: 830px) {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 20px;
+        text-align: center; 
+      }
+    }
+
+    .table-header {
+      border-bottom: 1px solid $border-color;
+      
+      @include dark-mode{
+        border: 1px solid $dark-border;
+      }
+
+      @media (max-width: 830px) {
+        .col-header {
+          display: none; 
+        }
+      }
+
+      .search-wrapper {
+        position: relative;
+        max-width: 300px;
+
+        @media (max-width: 830px) {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .search-icon-setting {
+          position: absolute;
+          top: 3.3px;
+          left: 7px;
+        }
+
+        .search-input {
+          width: 100%;
+          padding: 8px 10px 8px 37px;
+          border: 1px solid $border-color;
+          border-radius: 4px;
+          outline: unset;
+          font-size: $input-font-size;
+
+          @include dark-mode{
+            background-color: $dark-card;
+            color: $dark-text;
+            border: 1px solid $dark-border;
+          }
+
+          &:focus {
+            border-color: $primary-blue;
+          }
+        }
+      }
+
+      .col-header {
+        font-weight: $primary-font-weight;
+        color: $text-dark;
+        font-size: 0.9rem;
+
+        @include dark-mode{
+          background-color: $dark-card;
+          color: $dark-text;
+        }
+      }
+    }
+
+    .data-row {
+      border-bottom: 1px solid $border-color;
+      
+      @include dark-mode{
+        border: 1px solid $dark-border;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .user-info {
+      @include flex-center($flex-just-cont: flex-start);
+      gap: 15px;
+
+      @media (max-width: 830px) {
+        justify-content: flex-start;
+        width: 100%;
+      }
+      
+      .avatar {
+        width: $card-img-size-sm;
+        height: $card-img-size-sm;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .user-text {
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 830px) {
+           text-align: left;
+        }
+      }
+
+      .user-name {
+        font-weight: $secondary-font-weight;
+        color: $text-dark;
+
+        @include dark-mode{
+          color: $dark-text;
+        }
+      }
+
+      .user-lastname {
+        font-size: 0.85rem;
+      }
+    }
+
+    .role-toggle {
+      display: flex;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      overflow: hidden;
+      width: fit-content;
+
+      @include dark-mode{
+        border: 1px solid $dark-border;
+      }
+
+      @media (max-width: 830px) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+      }
+
+      .btn-toggle {
+        border: none;
+        padding: 6px 15px;
+        font-size: 0.75rem;
+        font-weight: $secondary-font-weight;
+        cursor: pointer;
+        background-color: $white;
+        color: #ccc;
+        transition: all 0.2s;
+        @include dark-mode{
+          background-color: $dark-card;
+        }
+        
+        @media (max-width: 830px) {
+            padding: 10px;
+        }
+
+        &.active {
+          background-color: $primary-blue;
+          color: $white;
+        }
+      }
+    }
+
+    .btn-admin {
+      border: 1px solid $border-color;
+      background-color: $white;
+      border-radius: 4px;
+      padding: 6px 15px;
+      font-size: 0.75rem;
+      font-weight: $secondary-font-weight;
+      color: #ccc;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.2s;
+      @include dark-mode{
+        background-color: $dark-card;
+        color: $dark-text;
+        border: 1px solid $dark-border;
+      }
+      &.active {
+        background-color: $primary-blue;
+        color: $white;
+        border-color: $primary-blue;
+      }
+
+      @media (max-width: 830px) {
+        padding: 10px;
+        margin-top: 5px;
+      }
+    }
+  }
+}

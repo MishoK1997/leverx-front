@@ -1,0 +1,21 @@
+@use "modules/variables" as *;
+@use "modules/mixins" as *;
+
+#not-found-container {
+  @include flex(column, center, center);
+
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  color: $text-muted;
+
+  p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+  }
+
+  #go-home-btn {
+    padding: 10px 20px;
+    @include search-home-btn;
+  }
+}

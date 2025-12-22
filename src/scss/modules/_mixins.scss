@@ -1,0 +1,115 @@
+@use "variables" as *;
+
+@mixin flex-center($flex-just-cont: center) {
+  display: flex;
+  justify-content: $flex-just-cont;
+  align-items: center;
+}
+
+@mixin mobile {
+  @media (max-width: 900px) {
+    @content;
+    display: none;
+  }
+}
+
+@mixin details {
+  @media (max-width: 830px){
+    @content ;
+    display: none;
+  }
+}
+
+@mixin btn-primary {
+  width: 100%;
+  padding: 14px;
+  background-color: $primary-blue;
+  color: $white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+}
+
+@mixin wrapper-common {
+  width: 100%;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin search-home-btn {
+  margin: 20px 0;
+  background-color: $primary-blue;
+  color: $white;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: $primary-font-weight;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+}
+
+@mixin flex($dir: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// It's used for cards
+@mixin hover-lift {
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: $primary-blue;
+  }
+}
+
+// BTNS
+
+@mixin hover-lift-second(
+  $hover-color: $text-dark,
+  $lift-amount: -2px,
+  $back-color: ""
+) {
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: $hover-color;
+    transform: translate($lift-amount);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: $back-color;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}
+
