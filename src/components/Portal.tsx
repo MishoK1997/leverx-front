@@ -13,7 +13,7 @@ import { useEffect } from "react";
 
 /**
  * @useEmployeeSearch Custom hook that involves count, search and mode logics, URL based structure etc.
- * @useGetUsersQuery RTQ Query that fetchs users list from a backend
+ * @useGetUsersQuery RTK Query that fetchs users list from a backend
  * @setMode Sets mode of search such as basic and advanced
  * @mode helps UI to hilight an active tab
  * @results Filtered data or all users as a default
@@ -47,8 +47,9 @@ export default function Portal() {
     activeAdvancedFilters,
   } = useEmployeeSearch(allUsers);
 
-  if (results.length === 0 && !isLoading){
-    return <NotFound />
+  if (isLoading){
+    return <div id="progress-detail">Lever<span id="x">X</span></div>;
+  
   }
 
   if(isLoading){
@@ -58,7 +59,7 @@ export default function Portal() {
   return (
     <ViewProvider>
       <aside className="sidebar">
-        <MemoSearchTabs activeTab={mode} onTabChange={setMode} />
+        <MemoSearchTabs mode={mode} setMode={setMode} />
         <MemoViewControls count={count} />
       </aside>
 

@@ -3,23 +3,23 @@ import {SearchMode} from "../../types"
 
 
 interface SearchTabsProps {
-  activeTab: SearchMode;
-  onTabChange: (mode: SearchMode) => void;
+  mode: SearchMode;
+  setMode: (mode: SearchMode) => void;
 }
 
 
 /**
- * @activeTab is passed mode that represents active tab basic or advanced
- * @onTabChange the core function that sets the tab
+ * @mode is passed mode that represents active tab basic or advanced
+ * @setMode the core function that sets the tab
  */
 
-function SearchTabs({ activeTab, onTabChange }: SearchTabsProps) {
+function SearchTabs({ mode, setMode }: SearchTabsProps) {
   return (
     <nav className="tabs-nav">
       <ul className="tabs">
         <li tabIndex={0}
-          className={activeTab === "basic" ? "active" : ""}
-          onClick={() => onTabChange("basic")}
+          className={mode === "basic" ? "active" : ""}
+          onClick={() => setMode("basic")}
         >
           <span className="tab-label" role="button">
             BASIC SEARCH
@@ -27,8 +27,8 @@ function SearchTabs({ activeTab, onTabChange }: SearchTabsProps) {
         </li>
 
         <li tabIndex={0}
-          className={activeTab === "advanced" ? "active" : ""}
-          onClick={() => onTabChange("advanced")}
+          className={mode === "advanced" ? "active" : ""}
+          onClick={() => setMode("advanced")}
         >
           <span className="tab-label"  role="button">
             ADVANCED SEARCH

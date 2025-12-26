@@ -7,7 +7,6 @@ import { Employee } from "../types";
 
 /**
  *
- * @useGetUsersQuery return all users from the backend with RTK Query
  * @useSearchParams allows handle URL
  * @function basicSearchUtil The core basic search function
  * @function advancedFilters this util contains a core handling functionality
@@ -44,6 +43,7 @@ export function useEmployeeSearch(allUsers: Employee[] = []) {
     return filters;
   }, [searchParams]);
 
+  // Conditional search results ----------------
   const results = useMemo(() => {
     if (mode === "basic") {
       if (!basicTerm.trim()) return allUsers;
@@ -51,6 +51,7 @@ export function useEmployeeSearch(allUsers: Employee[] = []) {
     } else return advancedSearchUtil(allUsers, advancedFilters);
   }, [mode, basicTerm, advancedFilters, allUsers]);
 
+  // Handlers to set search params in URL ------------
   const setBasicSearch = (term: string) => {
     if (term) {
       setSearchParams({ mode: "basic", search: term });
@@ -69,6 +70,7 @@ export function useEmployeeSearch(allUsers: Employee[] = []) {
     setSearchParams(params);
   };
 
+  // Handler to set mode in URL
   const setMode = (newMode: SearchMode) => {
     const newParams = new URLSearchParams(searchParams);
     newParams.set("mode", newMode);

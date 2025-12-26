@@ -41,10 +41,7 @@ export const usersApi = createApi({
       ],
     }),
     // Used for update user
-    updateUser: builder.mutation<
-      Employee,
-      { id: string; data: Partial<Employee> }
-    >({
+    updateUser: builder.mutation<Employee,{ id: string; data: Partial<Employee> }>({
       query: ({ id, data }) => ({
         url: `users/${id}`,
         method: "PATCH",

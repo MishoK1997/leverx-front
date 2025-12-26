@@ -13,7 +13,7 @@ git push -uf origin main
 
 After fetching this repository, run the following commands:
 
-## Install dependencies for both frontend and backend
+### Install dependencies for both frontend and backend
 
 ```
 npm install
@@ -75,12 +75,12 @@ Hosted URL: leverx.web3space.ge
 
 ## RTK integration approach
 
-The projec's state management is divided into three core modules such as store configuration, API and caching,  authenticaiton slice.
+The application's core state management is divided into three main modules such as store configuration, API and caching,  authenticaiton slice.
 
 ### Store configuration 
 
 The store acts  as the single source that combining the logic for authentication, user data and API caching.
-Middleware such as authApi.middleware and usersApi.middleware enable features like caching and polling.
+Middleware such as authApi.middleware and usersApi.middleware enable features like caching.
 
 The defined endpoints splitted into two files usersAPI.ts and authAPI.ts
 
@@ -89,7 +89,9 @@ The defined endpoints splitted into two files usersAPI.ts and authAPI.ts
 Manages employee data. It implements also an caching strategy.
 
 getUsers -- fetches the directory. It provides a "LIST" tag.
+
 getUserDetail -- Fetches single user data. Provides a specific "id" tag.
+
 updateUserRole -- Patches the user role on the server and caches ["Users", 'id: "LIST"']. In case of mutation success, RTK Query autimatically re-fetches getUsers, this ensures the admin sees the new role immediatelly.
 
 ### Auth API
@@ -104,6 +106,15 @@ logout reducer is an synchronous action that resets and clears localStorage and 
 
 matchFulfilled - instead of dispatching a separate "set user" action after login, the lisce listens directly to the API. That ensures whenever the signIn mutation succeeds, the global user state is updated automatically.
 
+Briefly this authSlice is used to manage profile and conditionally display settings page where an admin is allowed to change roles.
+
+## Custom hook: useFilterEmployee 
+
+It is a core and URL-state driven custom hook that involves basic and advanced search functionality modules. It initially determines which mode is active either basic or advanced then accordinglly and conditionally handle it's own initial search terms. Apart from this, it sets  our entered values as terms, seters are taileroed to the initial determine functions. When we enter a keyword for search it sets the URL and then based on the URL runs approrpiate search algorithm, then returns an updated users array, otherwise it retuns the original array. The array and functions also are dessiminated to other child components those are repsesented within a parent component named "Portal".
+
+## View Context 
+
+This context precludes prop drilling, with this we can provide and manage grid and list view.
 
 
 ---

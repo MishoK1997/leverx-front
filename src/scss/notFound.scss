@@ -6,16 +6,32 @@
 
   height: 100vh;
   width: 100vw;
-  text-align: center;
+
+
+
+}
+
+
+#not-found-message {
+  margin-top: 10px;
+  font-size: 1.1rem !important;
   color: $text-muted;
+  text-align: center;
 
-  p {
-    margin-top: 10px;
-    font-size: 1.1rem;
-  }
+}
 
-  #go-home-btn {
-    padding: 10px 20px;
-    @include search-home-btn;
-  }
+
+#go-home-btn {
+  padding: 10px 20px;
+  @include search-home-btn;
+}
+
+
+
+
+#no-employees-container {
+  @include flex(column, center, center);
+  padding: 2rem;
+  background-color: $white;
+
 }

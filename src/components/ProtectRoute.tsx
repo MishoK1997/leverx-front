@@ -4,6 +4,7 @@ import { RootState } from "../store/store";
 
 /**
  * This copmonent is responsible to protect url
+ * If an user is not authenticated, will be redirected to sign-in page
  */
 
 export default function ProtectRoute() {

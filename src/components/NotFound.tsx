@@ -1,6 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import "../scss/notFound.scss";
 
-export default function NotFound() {
+interface UserNotFoundProps {
+  width?: string;
+  height?: string;
+  empNotFoundStyle?:  boolean;
+}
+
+export default function NotFound( {width = "500px", height = "500px", 
+  empNotFoundStyle}:UserNotFoundProps){
+
   const navigate = useNavigate();
 
   const handleGoHome = () => {
@@ -8,19 +17,25 @@ export default function NotFound() {
   };
 
   return (
-    <div id="not-found-container" >
+    <div id={empNotFoundStyle ? "no-employees-container": "not-found-container"} >
       <div >
         <img 
-            width="500px" 
-            height="500px" 
-            src="/pics/404.svg" 
-            alt="Page Not Found" 
+            width={width} 
+            height={height} 
+            src={empNotFoundStyle 
+              ? "/pics/no-users.svg" 
+              : "/pics/404.svg"}
+            alt="Not Found" 
         />
       </div>
       
-      <h1>404 Page Not Found</h1>
-      <p>
-        Sorry, we can't find that page! It might be an old link or maybe it was moved.
+      <h1>
+        {empNotFoundStyle ? "No Employees Found" : "404 - Page Not Found"}
+        </h1>
+      <p id="not-found-message">
+      {empNotFoundStyle 
+        ? "Try adjusting your search or filter to find employees." 
+        : "The page you are looking for does not exist."}
       </p>
       
       <button 
@@ -33,3 +48,4 @@ export default function NotFound() {
     </div>
   );
 }
+

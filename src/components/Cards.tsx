@@ -5,6 +5,8 @@ import React from "react";
 import { useViewMode } from "../context/ViewContext";
 import { DeptIcon, RoomIcon } from "./icons/ListIcons";
 import { Link } from "react-router-dom";
+import NotFound from "./NotFound";
+
 
 interface CardsProps {
   allUsers: Employee[];
@@ -18,6 +20,10 @@ function Cards({ allUsers }: CardsProps) {
   const containerClass = `employee-list-container ${viewMode === "grid" ? "view-grid" : "view-list"}`;
 
   return (
+    <>
+    {allUsers.length === 0 && (
+      <NotFound  width="300px" height="300px" empNotFoundStyle/>
+    )}
     <div className={containerClass}>
       {allUsers?.map((emp, index) => (
         <Link
@@ -51,6 +57,8 @@ function Cards({ allUsers }: CardsProps) {
         </Link>
       ))}
     </div>
+
+    </>
   );
 }
 
