@@ -18,6 +18,19 @@ main {
 @media (max-width: 800px){
   .content-container{
     padding: $global-pad;
+
   }
+
+
 }
 
+
+@media (max-width: 460px){
+  .content-container{
+ 
+   #no-employees-container{
+        max-width: 90%;
+    }
+  }
+
+}

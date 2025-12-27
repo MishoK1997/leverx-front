@@ -22,10 +22,11 @@ import { RootState } from "../../store/store";
 export default function SignIn() {
   const navigate = useNavigate();
 
-    const currentUser = useSelector((state: RootState) => state.auth.user);
-    if(currentUser)  return <Navigate to="/portal" replace />
+  const currentUser = useSelector((state: RootState) => state.auth.user);
 
   const [loginFn, { isLoading, error }] = useSignInMutation();
+
+  if(currentUser)  return <Navigate to="/portal" replace />
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
