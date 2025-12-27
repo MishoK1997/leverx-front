@@ -6,47 +6,41 @@
 
   height: 100vh;
   width: 100vw;
- @include dark-mode{
-   h1 {
-    color: $dark-text;
-   }  
+  @include dark-mode {
+    h1 {
+      color: $dark-text;
+    }
   }
-
 }
-
 
 #not-found-message {
   margin-top: 10px;
   font-size: 1.1rem !important;
   color: $text-muted;
   text-align: center;
-
 }
-
 
 #go-home-btn {
   padding: 10px 20px;
   @include search-home-btn;
 }
 
-  #no-employees-container {
-    border-radius: 6px;
-    @include flex(column, center, center);
-    padding: 2rem;
-    background-color: $white;
-  
-    h1 {
-      text-align: center;
-    }
+#no-employees-container {
+  border-radius: 6px;
+  @include flex(column, center, center);
+  padding: 2rem;
+  background-color: $white;
 
-    @include dark-mode {
-      background-color: $dark-card;
-      border: 1px solid $dark-border;
-  
-      h1 {
-        color: $dark-text;
-      }
-    }
-  
+  h1 {
+    text-align: center;
   }
 
+  @include dark-mode {
+    background-color: $dark-card;
+    border: 1px solid $dark-border;
+
+    h1 {
+      color: $dark-text;
+    }
+  }
+}

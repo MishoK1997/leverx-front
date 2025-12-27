@@ -38,10 +38,9 @@ import "../scss/user-detail.scss";
  */
 
 export default function UserDetails() {
-
-  useEffect(()=>{
-    window.scrollTo(0,0);
-  },[])
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const { id } = useParams<{ id: string }>();
 
@@ -71,12 +70,19 @@ export default function UserDetails() {
   }, []);
 
   const handleDateInput = useCallback((key: string, val: string) => {
-    const [year, month, day] = val.split("-")
-    setFormData((prev) => (prev ? { ...prev, [key]: {
-      year: year,
-      month: month,
-      day: day
-    } } : null));
+    const [year, month, day] = val.split("-");
+    setFormData((prev) =>
+      prev
+        ? {
+            ...prev,
+            [key]: {
+              year: year,
+              month: month,
+              day: day,
+            },
+          }
+        : null,
+    );
   }, []);
 
   const handleSave = async () => {
@@ -95,7 +101,11 @@ export default function UserDetails() {
   };
 
   if (isFetching || !formData || !initialUser) {
-    return <div id="progress-detail">Lever<span id="x">X</span></div>;
+    return (
+      <div id="progress-detail">
+        Lever<span id="x">X</span>
+      </div>
+    );
   }
 
   return (
@@ -163,7 +173,11 @@ export default function UserDetails() {
             label="Manager"
             icon={<ManagerIcon />}
             value={`${formData.manager?.first_name || ""} ${formData.manager?.last_name || ""}`}
-            href={formData.manager?.id ? `/portal/users-details/${formData.manager.id}` : undefined}
+            href={
+              formData.manager?.id
+                ? `/portal/users-details/${formData.manager.id}`
+                : undefined
+            }
             isEditing={false}
           />
         </ul>
@@ -233,13 +247,19 @@ export default function UserDetails() {
               // condotionally return correct visa period or N/A
               const start = formData.visa[0]?.start_date;
               const end = formData.visa[0]?.end_date;
-          
-              if (!start || !end || String(start) === "N/A" || String(end) === "N/A") {
+
+              if (
+                !start ||
+                !end ||
+                String(start) === "N/A" ||
+                String(end) === "N/A"
+              ) {
                 return "N/A";
               }
-          
+
               return `${new Date(start).toLocaleDateString()} - ${new Date(end).toLocaleDateString()}`;
-            })()}            isEditing={false}
+            })()}
+            isEditing={false}
           />
         </ul>
       </div>

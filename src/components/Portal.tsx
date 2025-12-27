@@ -27,12 +27,9 @@ import { useEffect } from "react";
  **/
 
 export default function Portal() {
-
-
-    useEffect(()=>{
-      window.scrollTo(0,0);
-    },[])
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const { data: allUsers = [], isLoading } = useGetUsersQuery();
 
@@ -47,13 +44,20 @@ export default function Portal() {
     activeAdvancedFilters,
   } = useEmployeeSearch(allUsers);
 
-  if (isLoading){
-    return <div id="progress-detail">Lever<span id="x">X</span></div>;
-  
+  if (isLoading) {
+    return (
+      <div id="progress-detail">
+        Lever<span id="x">X</span>
+      </div>
+    );
   }
 
-  if(isLoading){
-    return <div id="progress-detail">Lever<span id="x">X</span></div>;
+  if (isLoading) {
+    return (
+      <div id="progress-detail">
+        Lever<span id="x">X</span>
+      </div>
+    );
   }
 
   return (

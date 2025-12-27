@@ -51,12 +51,11 @@ header {
       color: $white;
       text-decoration: unset;
 
-                  
       &::after {
-        content: '';
-        width: 0%; 
-        height: 0; 
-        transition: width 0.3s ease-out; 
+        content: "";
+        width: 0%;
+        height: 0;
+        transition: width 0.3s ease-out;
       }
 
       &.active::after {
@@ -72,8 +71,6 @@ header {
         border-radius: 100% 100% 20% 20%;
 
         box-shadow: 0 -2px 5px 2px $primary-blue;
-
-
       }
     }
   }

@@ -7,7 +7,7 @@
   height: 100%;
   display: flex;
 
-  // Display profile container smoothly 
+  // Display profile container smoothly
   animation: smoothReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 
   #user-profile-detail {
@@ -40,7 +40,6 @@
       margin-bottom: 12px;
 
       @include dark-mode {
-
         color: $dark-text;
       }
     }
@@ -52,7 +51,7 @@
       @include flex-center;
     }
 
-    .name-wrapper{
+    .name-wrapper {
       margin-bottom: 50px;
 
       min-height: 90px;
@@ -78,7 +77,6 @@
           color: $primary-hover;
         }
       }
-
     }
 
     #back-btn {
@@ -97,7 +95,6 @@
 
       @include dark-mode {
         border: 1px solid $dark-border;
-       
       }
     }
   }
@@ -112,7 +109,6 @@
 
     // Smoothly appear the  container of user details
     animation: smoothReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-     
 
     @include dark-mode {
       background-color: $dark-card;
@@ -124,9 +120,6 @@
       margin-bottom: 10px;
 
       color: #777;
-
-
-      
     }
 
     hr {
@@ -135,8 +128,6 @@
       width: 90%;
       background-color: #777777;
       opacity: 0.4;
-
-
     }
 
     .user-meta {
@@ -148,8 +139,6 @@
         margin: 10px 0;
         display: flex;
         align-items: center;
-
-
       }
 
       li:first-child {
@@ -159,43 +148,35 @@
       li span:first-child {
         color: #777;
         min-width: 60%;
-        word-break: break-all;   
+        word-break: break-all;
       }
 
       a {
         text-decoration: none;
         color: var(--primary-blue);
 
-        word-break: break-all;   
+        word-break: break-all;
       }
-
-    
     }
   }
-
-
 }
 
 #back-btn svg {
   position: relative;
   top: 1px;
   right: 1px;
-
 }
 
 #copy-btn svg,
 #edit-btn svg {
   margin: 0 7px;
-
-  
 }
 
-#edit-btn{
-
+#edit-btn {
   @include dark-mode {
-    &:hover{
+    &:hover {
       color: $primary-hover;
-     }  
+    }
   }
 }
 
@@ -204,68 +185,55 @@
 @keyframes smoothReveal {
   0% {
     opacity: 0;
-    transform: translateY(-10px) scale(0.60); 
-
- 
+    transform: translateY(-10px) scale(0.6);
   }
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
-  
   }
 }
 
-
-
 // Responsive section
 
-@media (max-width: 830px){
-  #user-detail-container{
+@media (max-width: 830px) {
+  #user-detail-container {
     flex-direction: column;
     gap: 5px;
-
   }
-  #user-profile-detail{
+  #user-profile-detail {
     width: 100% !important;
 
-    #back-btn{
-     right: -10px !important;
+    #back-btn {
+      right: -10px !important;
     }
-    #u-avatar{
-      
+    #u-avatar {
       left: 2px !important;
-    } 
+    }
   }
 
-  #user-details{
+  #user-details {
     padding: 0 20px !important;
 
-    hr{
+    hr {
       width: 100% !important;
     }
 
     .user-meta {
- 
-
       width: 100% !important;
-    
-      .edit-user-class{
+
+      .edit-user-class {
         min-width: 100px !important;
       }
-      li{
+      li {
         min-height: 37px !important;
-
-
       }
     }
   }
-  
 }
-
 
 // loader
 
-#progress-detail{
+#progress-detail {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -274,26 +242,32 @@
   font-size: 4rem;
 
   opacity: 0.8;
- 
+
   @include dark-mode {
     color: $white;
   }
-
 }
 
-
 @keyframes shakeX {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(-2px, 0) rotate(-5deg); }
-  50% { transform: translate(0, 0) rotate(0deg); }
-  75% { transform: translate(2px, 0) rotate(5deg); }
-  100% { transform: translate(0, 0) rotate(0deg); }
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-2px, 0) rotate(-5deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  75% {
+    transform: translate(2px, 0) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
 
 #x {
-  display: inline-block; 
-  animation: shakeX 0.4s infinite ease-in-out; 
-  font-weight:  bold;
-
-
+  display: inline-block;
+  animation: shakeX 0.4s infinite ease-in-out;
+  font-weight: bold;
 }

@@ -7,7 +7,6 @@ import { DeptIcon, RoomIcon } from "./icons/ListIcons";
 import { Link } from "react-router-dom";
 import NotFound from "./NotFound";
 
-
 interface CardsProps {
   allUsers: Employee[];
 }
@@ -21,43 +20,43 @@ function Cards({ allUsers }: CardsProps) {
 
   return (
     <>
-    {allUsers.length === 0 && (
-      <NotFound  width="300px" height="300px" empNotFoundStyle/>
-    )}
-    <div className={containerClass}>
-      {allUsers?.map((emp, index) => (
-        <Link
-          to={`users-details/${emp._id}`}
-          className="card-link-wrapper"
-          key={emp._id}
-        >
-          <article className="employee-card"
-          style={{ animationDelay: `${index * 0.1}s` }}
+      {allUsers.length === 0 && (
+        <NotFound width="300px" height="300px" empNotFoundStyle />
+      )}
+      <div className={containerClass}>
+        {allUsers?.map((emp, index) => (
+          <Link
+            to={`users-details/${emp._id}`}
+            className="card-link-wrapper"
+            key={emp._id}
           >
-            <img src={emp.user_avatar} alt={emp.first_name} />
-            <div className="card-info">
-              <h3>
-                {emp.first_name} {emp.last_name}
-              </h3>
+            <article
+              className="employee-card"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <img src={emp.user_avatar} alt={emp.first_name} />
+              <div className="card-info">
+                <h3>
+                  {emp.first_name} {emp.last_name}
+                </h3>
 
-              {viewMode === "grid" && <hr />}
+                {viewMode === "grid" && <hr />}
 
-              <div className="details">
-                <span>
-                  <DeptIcon style={iconStyle} />
-                  {emp.department}
-                </span>
-                <span>
-                  <RoomIcon style={iconStyle} />
-                  {emp.room}
-                </span>
+                <div className="details">
+                  <span>
+                    <DeptIcon style={iconStyle} />
+                    {emp.department}
+                  </span>
+                  <span>
+                    <RoomIcon style={iconStyle} />
+                    {emp.room}
+                  </span>
+                </div>
               </div>
-            </div>
-          </article>
-        </Link>
-      ))}
-    </div>
-
+            </article>
+          </Link>
+        ))}
+      </div>
     </>
   );
 }

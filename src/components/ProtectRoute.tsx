@@ -8,13 +8,12 @@ import { RootState } from "../store/store";
  */
 
 export default function ProtectRoute() {
+  const user = useSelector((state: RootState) => state.auth.user);
+  const location = useLocation();
 
-    const user = useSelector((state: RootState) => state.auth.user);
-    const location = useLocation()
+  if (!user) {
+    return <Navigate to="/sign-in" replace state={{ from: location }} />;
+  }
 
-    if(!user){
-        return <Navigate to="/sign-in" replace state={{from: location}}/>
-    }
-
-    return <Outlet />
+  return <Outlet />;
 }

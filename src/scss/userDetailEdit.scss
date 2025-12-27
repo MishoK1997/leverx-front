@@ -11,8 +11,7 @@
   max-width: 200px;
 
   animation: smoothReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-  padding: 7px 12px; 
-
+  padding: 7px 12px;
 
   @include dark-mode {
     background-color: $dark-card;
@@ -22,7 +21,6 @@
   &:focus {
     border-color: $primary-blue;
   }
-
 }
 
 .edit-name-group input {
@@ -43,13 +41,11 @@
   padding-right: 20px;
 
   animation: smoothReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-
 }
 
 #edit-btn-wrapper {
   display: flex;
   gap: 10px;
-
 }
 
 .user-btn-class {
@@ -61,18 +57,14 @@
   font-weight: 700;
   cursor: pointer;
 
-  
-
   @include dark-mode {
     color: $dark-text-color;
-    &:hover{
+    &:hover {
       color: $primary-hover;
     }
   }
 }
 .is-editing-btn {
   padding: 10px !important;
-    transition: all 0.4s;
-
+  transition: all 0.4s;
 }
-

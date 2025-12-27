@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { Navigate, redirect, useSearchParams } from "react-router-dom";
 import basicSearchUtil from "../utils/basicSearchUtil";
+import NotFound from "./NotFound";
 
 /**
  * @function handleRoleUpdate is responsible to update active buttons those are represented in @UserRoleRow
@@ -14,21 +15,19 @@ import basicSearchUtil from "../utils/basicSearchUtil";
  */
 
 export default function Settings() {
-
   const currentUser = useSelector((state: RootState) => state.auth.user);
 
-  if(currentUser?.role !== "admin") return <Navigate to="/sign-in" replace />
+  if (currentUser?.role !== "admin") return <Navigate to="/sign-in" replace />;
 
   const { data: allUsers = [], isLoading } = useGetUsersQuery();
-
 
   // Allows handle search with URL
   const [searchParams, setSearchParams] = useSearchParams();
   const searchTerm = searchParams.get("search") || "";
 
-  useEffect(()=> {
-    window.scrollTo(0,0)
-  }, [])
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const displayedUsers = useMemo(() => {
     if (!searchTerm.trim()) return allUsers;
@@ -43,8 +42,12 @@ export default function Settings() {
     },
     [setSearchParams],
   );
-  if(isLoading){
-    return <div id="progress-detail">Lever<span id="x">X</span></div>;
+  if (isLoading) {
+    return (
+      <div id="progress-detail">
+        Lever<span id="x">X</span>
+      </div>
+    );
   }
 
   return (
@@ -57,11 +60,8 @@ export default function Settings() {
             <UserRoleRow key={user._id} user={user} currentUser={currentUser} />
           ))}
 
-          {(displayedUsers.length === 0 && !isLoading)&& (
-            <div className="no-results">
-              There are only two industries that call their customers "users"
-              illegal drugs and software{" "}
-            </div>
+          {displayedUsers.length === 0 && !isLoading && (
+            <NotFound empNotFoundStyle settings />
           )}
         </div>
       </div>

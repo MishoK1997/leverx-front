@@ -15,7 +15,7 @@ export default function Nav({ className = "header-nav", closeMenu }: NavProps) {
       <NavLink
         to="/portal"
         end
-        onClick={closeMenu} 
+        onClick={closeMenu}
         className={({ isActive }) =>
           isActive ? "nav-item active" : "nav-item"
         }

@@ -1,7 +1,7 @@
 import BasicSearch from "./search/BasicSearch";
 import { AdvancedSearch } from "./search/AdvancedSearch";
 
-import {SearchMode} from "../types"
+import { SearchMode } from "../types";
 
 type AdvancedFilters = {
   [key: string]: string | number | boolean;
@@ -14,7 +14,6 @@ type SearchSectionProps = {
   activeBasicTerm: string;
   activeAdvancedFilters: AdvancedFilters;
 };
-
 
 /**
  * @SearchSection component displays conditionally the basic or advanced search tabs
@@ -31,16 +30,14 @@ export default function SearchSection({
   mode,
   activeBasicTerm,
   activeAdvancedFilters,
-  }: SearchSectionProps) {
-
+}: SearchSectionProps) {
   const handleBasicSearch = (term: string) => {
-      basicSearch(term);
-    }
+    basicSearch(term);
+  };
 
-const handleAdvancedSearch = (filters: AdvancedFilters) => {
-  advancedSearch(filters);
-};
-
+  const handleAdvancedSearch = (filters: AdvancedFilters) => {
+    advancedSearch(filters);
+  };
 
   return mode === "basic" ? (
     <BasicSearch onSearch={handleBasicSearch} defaultValue={activeBasicTerm} />

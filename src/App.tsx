@@ -36,12 +36,12 @@ const router = createBrowserRouter([
     ],
   },
   {
-    element: <ProtectRoute />, 
+    element: <ProtectRoute />,
     errorElement: <NotFound />,
     children: [
       {
         path: "/portal",
-        element: <RootLayout />, 
+        element: <RootLayout />,
         children: [
           {
             index: true,
@@ -59,7 +59,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
 ]);
 
 export default function App() {

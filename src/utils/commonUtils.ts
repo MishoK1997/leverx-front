@@ -33,11 +33,11 @@ export function isRoleEditable(
   target: Employee | null | undefined,
 ): boolean {
   if (actor?._id === target?._id) return false;
-  if (actor?.role === "admin") return true 
-  return false
+  if (actor?.role === "admin") return true;
+  return false;
 }
 
-// Date formater 
+// Date formater
 
 export const formatDateForInput = (dateObj: any) => {
   if (!dateObj) return "";
@@ -45,4 +45,3 @@ export const formatDateForInput = (dateObj: any) => {
   const month = String(dateObj.month).padStart(2, "0");
   return `${dateObj.year}-${month}-${day}`;
 };
-

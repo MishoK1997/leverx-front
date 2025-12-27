@@ -8,7 +8,6 @@ import { useSignUpMutation } from "../../store/api/authAPI";
 import { RootState } from "../../store/store";
 import { useSelector } from "react-redux";
 
-
 /**
  * @async @function handleSubmit get the input values and pass to the backend for user creation
  * It happens if the passwords match and an entered email doesn't exist,
@@ -18,8 +17,8 @@ import { useSelector } from "react-redux";
 export default function SignUp() {
   const navigate = useNavigate();
 
-      const currentUser = useSelector((state: RootState) => state.auth.user);
-      if(currentUser)  return <Navigate to="/portal" replace />
+  const currentUser = useSelector((state: RootState) => state.auth.user);
+  if (currentUser) return <Navigate to="/portal" replace />;
 
   const [signUpFn, { isLoading, error }] = useSignUpMutation();
 

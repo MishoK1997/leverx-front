@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 
 import { RootState } from "../../store/store";
 
-
 /**
  * @async @function handleSubmit is the core function that handles
  * form inputs and auth API request.
@@ -26,7 +25,7 @@ export default function SignIn() {
 
   const [loginFn, { isLoading, error }] = useSignInMutation();
 
-  if(currentUser)  return <Navigate to="/portal" replace />
+  if (currentUser) return <Navigate to="/portal" replace />;
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();

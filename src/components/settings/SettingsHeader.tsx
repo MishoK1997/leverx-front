@@ -15,7 +15,7 @@ type HeaderProps = {
  * @function basicSearchUtil The core basic search functionality
  */
 
-const SettingsHeader = ({  onSearch }: HeaderProps) => {
+const SettingsHeader = ({ onSearch }: HeaderProps) => {
   const searchRef = useRef<HTMLInputElement>(null);
 
   const searchHandler = (e: FormEvent) => {

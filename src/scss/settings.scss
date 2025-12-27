@@ -7,7 +7,6 @@
 
   // animation: smoothReveal 0.6s  ease-in-out forwards;
 
-
   @media (max-width: 830px) {
     padding: 15px;
   }
@@ -20,10 +19,9 @@
     margin: 20px auto;
     overflow: hidden;
 
-    animation: smoothReveal 0.6s  ease-in-out forwards;
+    animation: smoothReveal 0.6s ease-in-out forwards;
 
-
-    @include dark-mode{
+    @include dark-mode {
       background-color: $dark-card;
       border: 1px solid $dark-border;
     }
@@ -37,12 +35,12 @@
       letter-spacing: 0.5px;
       text-transform: uppercase;
 
-      @include dark-mode{
+      @include dark-mode {
         background-color: $dark-card;
         color: $dark-text;
         border: 1px solid $dark-border;
       }
-      
+
       @media (max-width: 830px) {
         padding: 15px 20px;
       }
@@ -56,7 +54,7 @@
       padding: 15px 30px;
       gap: 20px;
 
-      @include dark-mode{
+      @include dark-mode {
         background-color: $dark-card;
         color: $dark-text;
         border: 1px solid $dark-border;
@@ -66,20 +64,20 @@
         grid-template-columns: 1fr;
         gap: 15px;
         padding: 20px;
-        text-align: center; 
+        text-align: center;
       }
     }
 
     .table-header {
       border-bottom: 1px solid $border-color;
-      
-      @include dark-mode{
+
+      @include dark-mode {
         border: 1px solid $dark-border;
       }
 
       @media (max-width: 830px) {
         .col-header {
-          display: none; 
+          display: none;
         }
       }
 
@@ -106,7 +104,7 @@
           outline: unset;
           font-size: $input-font-size;
 
-          @include dark-mode{
+          @include dark-mode {
             background-color: $dark-card;
             color: $dark-text;
             border: 1px solid $dark-border;
@@ -123,7 +121,7 @@
         color: $text-dark;
         font-size: 0.9rem;
 
-        @include dark-mode{
+        @include dark-mode {
           background-color: $dark-card;
           color: $dark-text;
         }
@@ -132,8 +130,8 @@
 
     .data-row {
       border-bottom: 1px solid $border-color;
-      
-      @include dark-mode{
+
+      @include dark-mode {
         border: 1px solid $dark-border;
       }
 
@@ -150,7 +148,7 @@
         justify-content: flex-start;
         width: 100%;
       }
-      
+
       .avatar {
         width: $card-img-size-sm;
         height: $card-img-size-sm;
@@ -162,7 +160,7 @@
         display: flex;
         flex-direction: column;
         @media (max-width: 830px) {
-           text-align: left;
+          text-align: left;
         }
       }
 
@@ -170,7 +168,7 @@
         font-weight: $secondary-font-weight;
         color: $text-dark;
 
-        @include dark-mode{
+        @include dark-mode {
           color: $dark-text;
         }
       }
@@ -187,14 +185,14 @@
       overflow: hidden;
       width: fit-content;
 
-      @include dark-mode{
+      @include dark-mode {
         border: 1px solid $dark-border;
       }
 
       @media (max-width: 830px) {
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 1fr 1fr;
       }
 
       .btn-toggle {
@@ -206,12 +204,12 @@
         background-color: $white;
         color: #ccc;
         transition: all 0.2s;
-        @include dark-mode{
+        @include dark-mode {
           background-color: $dark-card;
         }
-        
+
         @media (max-width: 830px) {
-            padding: 10px;
+          padding: 10px;
         }
 
         &.active {
@@ -232,7 +230,7 @@
       width: 100%;
       cursor: pointer;
       transition: all 0.2s;
-      @include dark-mode{
+      @include dark-mode {
         background-color: $dark-card;
         color: $dark-text;
         border: 1px solid $dark-border;

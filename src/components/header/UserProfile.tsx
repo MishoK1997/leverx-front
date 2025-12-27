@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import HeaderButton from "./HeaderButton";
-import {  LogoutIcon, QuestionMarkIcon } from "../icons/ListIcons";
+import { LogoutIcon, QuestionMarkIcon } from "../icons/ListIcons";
 import { logout } from "../../store/slices/authSlice";
 import { RootState } from "../../store/store";
 import BurgerMenu from "../UI/BurgerMenu";
-
 
 export default function UserProfile() {
   const navigate = useNavigate();
@@ -16,8 +15,8 @@ export default function UserProfile() {
 
   const signOut = () => {
     dispatch(logout());
-    navigate("/sign-in", { replace: true })
-  }
+    navigate("/sign-in", { replace: true });
+  };
 
   return (
     <div className="header-right">
@@ -26,7 +25,6 @@ export default function UserProfile() {
         iconElement={<QuestionMarkIcon />}
         label="SUPPORT"
         altText="Question Mark"
- 
       />
 
       <HeaderButton
@@ -44,7 +42,7 @@ export default function UserProfile() {
         onClick={() => signOut()}
       />
 
-      <BurgerMenu 
+      <BurgerMenu
         firstName={user.first_name}
         lastName={user.last_name}
         avatar={user.user_avatar}

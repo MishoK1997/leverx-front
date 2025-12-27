@@ -102,9 +102,7 @@ export interface RowProps {
   currentUser: UserProfile | undefined;
 }
 
-
 export type SearchMode = "basic" | "advanced";
-
 
 export interface User {
   _id: string;

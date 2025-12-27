@@ -5,7 +5,6 @@
   @include flex(column, center, center);
   @include hover-lift;
 
-
   background-color: $white;
   border-radius: $radius-sm;
   padding-top: 40px;
@@ -13,8 +12,7 @@
   border: 1px solid transparent;
 
   opacity: 0;
-  animation: smoothDisplayDelay 0.6s   forwards;
-  
+  animation: smoothDisplayDelay 0.6s forwards;
 
   img {
     width: $card-img-size-lg;
@@ -58,7 +56,7 @@
     }
   }
 
-  @include dark-mode{
+  @include dark-mode {
     background-color: $dark-card;
     color: $dark-text;
     border: 1px solid $dark-border;
@@ -69,11 +67,7 @@
   text-decoration: none;
 
   color: inherit;
-
-
-  
 }
-
 
 @keyframes smoothDisplayDelay {
   0% {
@@ -81,7 +75,7 @@
     transform: translateY(-30px);
   }
 
-  100%{
+  100% {
     opacity: 1;
     transform: translateY(0);
   }

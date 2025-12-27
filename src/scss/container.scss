@@ -7,30 +7,22 @@
   height: 100vh;
   background-color: transparent;
   padding-right: 3em;
-
 }
 
 main {
   flex-grow: 1;
 }
 
-
-@media (max-width: 800px){
-  .content-container{
+@media (max-width: 800px) {
+  .content-container {
     padding: $global-pad;
-
   }
-
-
 }
 
-
-@media (max-width: 460px){
-  .content-container{
- 
-   #no-employees-container{
-        max-width: 90%;
+@media (max-width: 460px) {
+  .content-container {
+    #no-employees-container {
+      max-width: 90%;
     }
   }
-
 }

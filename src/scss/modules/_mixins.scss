@@ -14,8 +14,8 @@
 }
 
 @mixin details {
-  @media (max-width: 830px){
-    @content ;
+  @media (max-width: 830px) {
+    @content;
     display: none;
   }
 }
@@ -112,4 +112,3 @@
     box-shadow: none;
   }
 }
-
