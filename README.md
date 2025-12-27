@@ -35,18 +35,18 @@ npm run start
 
 ## Deployment
 
-## Creating bundle 
+## Creating bundle
 
 ```
 npm run build
-
 ```
+
 ## Deploy on CF
+
 In this case the FE is deployed on CloudFlare with wrangler CLI as workers and pages.
 
 ```
 npx wrangler pages deploy ./dis
-
 ```
 
 ## Deploy of BE
@@ -54,9 +54,9 @@ npx wrangler pages deploy ./dis
 ```
 npm run build
 
-npm run start 
-
+npm run start
 ```
+
 # Backend Specifications
 
 Backend OS: Linux (AlmaLinux)
@@ -71,20 +71,20 @@ Hosted URL: leverx.web3space.ge
 
 ---
 
-# Architecture ovierview 
+# Architecture ovierview
 
 ## RTK integration approach
 
-The application's core state management is divided into three main modules such as store configuration, API and caching,  authenticaiton slice.
+The application's core state management is divided into three main modules such as store configuration, API and caching, authenticaiton slice.
 
-### Store configuration 
+### Store configuration
 
-The store acts  as the single source that combining the logic for authentication, user data and API caching.
+The store acts as the single source that combining the logic for authentication, user data and API caching.
 Middleware such as authApi.middleware and usersApi.middleware enable features like caching.
 
 The defined endpoints splitted into two files usersAPI.ts and authAPI.ts
 
-### Users API 
+### Users API
 
 Manages employee data. It implements also an caching strategy.
 
@@ -98,7 +98,7 @@ updateUserRole -- Patches the user role on the server and caches ["Users", 'id: 
 
 Manages public endpoints such as "sign-in" and "sign-up"
 
-### Authentication Slice 
+### Authentication Slice
 
 This slice handles the presistence and session state, initial state from local storage with getCurrUser() that derives persist login across refreshes.
 
@@ -108,28 +108,32 @@ matchFulfilled - instead of dispatching a separate "set user" action after login
 
 Briefly this authSlice is used to manage profile and conditionally display settings page where an admin is allowed to change roles.
 
-## Custom hook: useFilterEmployee 
+## Custom hook: useFilterEmployee
 
-It is a core and URL-state driven custom hook that involves basic and advanced search functionality modules. It initially determines which mode is active either basic or advanced then accordinglly and conditionally handle it's own initial search terms. Apart from this, it sets  our entered values as terms, seters are taileroed to the initial determine functions. When we enter a keyword for search it sets the URL and then based on the URL runs approrpiate search algorithm, then returns an updated users array, otherwise it retuns the original array. The array and functions also are dessiminated to other child components those are repsesented within a parent component named "Portal".
+It is a core and URL-state driven custom hook that involves basic and advanced search functionality modules. It initially determines which mode is active either basic or advanced then accordinglly and conditionally handle it's own initial search terms. Apart from this, it sets our entered values as terms, seters are taileroed to the initial determine functions. When we enter a keyword for search it sets the URL and then based on the URL runs approrpiate search algorithm, then returns an updated users array, otherwise it retuns the original array. The array and functions also are dessiminated to other child components those are repsesented within a parent component named "Portal".
 
-## View Context 
+## View Context
 
 This context precludes prop drilling, with this we can provide and manage grid and list view.
 
+---
+![alt text](src/assets/diagramofleverxproject.png)
 
 ---
 
-# About users 
+# About users
 
 Note: The password is "123" for all users.
 Admin: Michael - m.khojadze@leverx.com
 Default manager: Marya Kizim - m.kizim@leverx.com
 
 ### HR
+
 Ihar - sivak@leverx.com
 Elon musk - e.musk@leverx.com
 
 ### Employees
+
 Ivan - ivan@leverx.com
 Nikita - nikita@leverx.com
 user-6 - user-6@leverx.com
@@ -156,6 +160,7 @@ Nikita Filimonau (id: 4)
 Sam Altman (id: 15)
 
 ### Ihar Sivak (id: 5)
+
 Manages:
 
 User-6 (id: 6)
@@ -167,6 +172,7 @@ Anton Sviarzhynski (id: 8)
 Dzmitry Fesik (id: 9)
 
 ### Elon Musk (id: 10)
+
 Manages:
 
 Vitalic Butterin (id: 11)
@@ -176,7 +182,6 @@ Satoshi Nakamoto (id: 12)
 Bill Gates (id: 13)
 
 Linus Torvalds (id: 14)
-
 
 ---
 
@@ -254,7 +259,7 @@ Uses Basic Search to filter employees.
 
 URL updates based on search input and preserves state on refresh.
 
-Invalid search input displays a friendly informative message.
+Invalid search input displays a users not found message, that is also rendered on the portal during invalid search.
 
 Clicking on a manager's name in a user's detail view opens that manager’s detailed information.
 
@@ -263,8 +268,6 @@ Routing & Error Handling
 Non-existent routes return a "Not Found" page.
 
 URL protection is enforced: only logged-in users can access application routes.
-
-
 
 ## Name
 

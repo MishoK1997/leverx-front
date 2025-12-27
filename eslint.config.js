@@ -7,15 +7,14 @@ import jsxA11y from "eslint-plugin-jsx-a11y";
 export default [
   {
     ignores: [
-        "node_modules",
-        "dist",
-        "build",
-        "coverage",
-        "babel.config.js",
-        "webpack.config.js",
-        "trash"
-      ],
-    
+      "node_modules",
+      "dist",
+      "build",
+      "coverage",
+      "babel.config.js",
+      "webpack.config.js",
+      "trash",
+    ],
   },
 
   js.configs.recommended,
@@ -35,15 +34,14 @@ export default [
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
 
-     "@typescript-eslint/no-unused-vars": [
-  "warn",
-  {
-    argsIgnorePattern: "^_",
-    varsIgnorePattern: "^_",
-    caughtErrorsIgnorePattern: "^_",
-  },
-],
-
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
 
       "no-console": ["warn", { allow: ["warn", "error"] }],
     },

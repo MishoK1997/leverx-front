@@ -1,7 +1,7 @@
 import express from "express";
 import bcrypt from "bcrypt";
 import cors from "cors";
-import {User} from "./types";
+import { User } from "./types";
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
 
@@ -9,7 +9,9 @@ interface DbData {
   users: User[];
 }
 
-const db = new Low<DbData>(new JSONFile<DbData>(".data/user-data.json"), { users: [] });
+const db = new Low<DbData>(new JSONFile<DbData>(".data/user-data.json"), {
+  users: [],
+});
 
 const app = express();
 const PORT = 3000;
@@ -43,10 +45,10 @@ app.get("/users/:id", async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
-    
+
     const { password: _password, ...userWithoutPassword } = user;
     res.json(userWithoutPassword);
-      } catch (error) {
+  } catch (error) {
     console.error("Error during returning a specific user: ", error);
   }
 });
@@ -69,7 +71,7 @@ app.patch("/users/:id", async (req, res) => {
     const { password: _password, ...userWithoutPassword } = updatedUser;
     res.json(userWithoutPassword);
   } catch (error) {
-    console.error("update failed: ",error )
+    console.error("update failed: ", error);
     res.status(500).json({ message: "Update failed!!!" });
   }
 });
@@ -87,7 +89,8 @@ app.post("/sign-in", async (req, res) => {
     }
 
     // Compare password hashes
-    if(!user.password) return res.status(401).json({message: "Invalid user pass"})
+    if (!user.password)
+      return res.status(401).json({ message: "Invalid user pass" });
     const match = await bcrypt.compare(password, user.password);
 
     if (match) {
@@ -102,7 +105,6 @@ app.post("/sign-in", async (req, res) => {
     console.error("Internal server error:", error);
     res.status(500).json({ message: "Internal server error" });
   }
-  
 });
 
 //POST /sing-up
@@ -114,11 +116,9 @@ app.post("/sign-up", async (req, res) => {
 
     const emailExists = db.data.users.some((user) => user.email === email);
     if (emailExists) {
-      return res
-        .status(400)
-        .json({
-          message: "Email address already exists. Please use another email.",
-        });
+      return res.status(400).json({
+        message: "Email address already exists. Please use another email.",
+      });
     }
     const hash = await bcrypt.hash(password, 10);
 
@@ -167,11 +167,11 @@ app.post("/sign-up", async (req, res) => {
     await db.write();
     res.status(201).json({ message: "User created" });
   } catch (error) {
-    console.error("Error during creating a new user: " ,error)
+    console.error("Error during creating a new user: ", error);
     res.status(500).json({ message: "Error during creatng a new user" });
   }
-})
+});
 
 app.listen(PORT, () => {
   console.warn(`Server running on http://localhost:${PORT}`);
-})
+});
